@@ -220,15 +220,17 @@ public class Exercises {
 		int snowSatA = 45;
 		int snowTotal = snowSat + snowSatA;
 
+      /* Exercise 26
+      26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
+      money did she pay for all of the hot dogs?
+      */
+		double moneyFive = 6 * 0.50;
 
-        /* Exercise 26
-        26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How muchint
-        27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
-        she buy with the money she has?
-        */
-		double savings = .50;
-		double costPencile = .07;
-		int amountToBuy = (int) (savings / costPencile);
+      /* Exercise 27
+      27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
+      she buy with the money she has?
+      */
+		int pencils = 50 / 7;
 
 
         /* Exercise 28
@@ -427,7 +429,7 @@ public class Exercises {
         */
 		int cards = 94;
 		int boxLimit = 8;
-		int boxesFilled = cards / boxLimit;
+		int boxesFilled = cards % boxLimit;
 
 
         /* Exercise 49
