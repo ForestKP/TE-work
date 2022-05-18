@@ -18,6 +18,12 @@ public class Exercise01_TestGrading {
     gradeTestPassFail(45) ➔ false
      */
     public boolean gradeTestPassFail(int score) {
+        // score >= 70 is passing
+        // < 70 is fail
+        if ( score >=70
+        ) { return true;
+        }
+
         return false;
     }
 
