@@ -22,8 +22,20 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45) ➔ 23.75
      */
     public double calculateShippingTotal(int weightPounds) {
-        return 0;
+        // if int <= 40 = .50 per pound. int * .50
+        // if int >= 40 = .75 per pound for each pound over 40. int * .75
+        double shippingTotal = 0;
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            shippingTotal = weightPounds * UP_TO_40_LB_RATE;
+        }
+        if (weightPounds > MAX_WEIGHT_POUNDS) {
+            shippingTotal = MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE + (weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE;
+        }
+
+
+        return shippingTotal;
     }
+
 
     /*
     Scamper Shipping Company now allows customers to provide a discount code to give them 10% off of their order.
@@ -38,8 +50,23 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, true) ➔ 21.375
      */
     public double calculateShippingTotal(int weightPounds, boolean hasDiscount) {
-        return 0;
+        double shippingTotal = 0;
+
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            shippingTotal = weightPounds * UP_TO_40_LB_RATE;
+        }
+        if (weightPounds > MAX_WEIGHT_POUNDS) {
+            shippingTotal = MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE + (weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE;
+        }
+        // if customer has discount total cost should be * .01 to get discount
+        if (hasDiscount){
+            return shippingTotal = shippingTotal * .9;
+        }
+
+            return shippingTotal;
     }
+
+
 
     /*
     As the business grows for Scamper Shipping Company, they now offer discounts in various amounts.
@@ -53,6 +80,18 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45, 0.2) ➔ 19.0
      */
     public double calculateShippingTotal(int weightPounds, double discountPercentage) {
-        return 0;
+        double shippingTotal = 0;
+            boolean dis = true;
+
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+            shippingTotal = weightPounds * UP_TO_40_LB_RATE;
+        }
+        if (weightPounds > MAX_WEIGHT_POUNDS) {
+            shippingTotal = MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE + (weightPounds - MAX_WEIGHT_POUNDS) * OVER_40_LB_RATE;
+        }
+        // if customer has discount.. then the discount = weight * discount
+
+
+        return shippingTotal = (1 - discountPercentage) * shippingTotal;
     }
 }

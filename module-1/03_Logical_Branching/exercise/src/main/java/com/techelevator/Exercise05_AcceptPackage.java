@@ -24,9 +24,13 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50) ➔ false
      */
     public boolean acceptPackage(int weightPounds) {
+
+        if (weightPounds <= MAX_WEIGHT_POUNDS) {
+
+            return true;
+        }
         return false;
     }
-
     /*
     Scamper Shipping delivers packages by hand, and some packages can be awkward to carry.
     Scamper decides that in addition to the package being no more than 40 pounds, they must also limit its size.

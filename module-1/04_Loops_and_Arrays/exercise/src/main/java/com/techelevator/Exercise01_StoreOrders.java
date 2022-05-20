@@ -26,7 +26,7 @@ public class Exercise01_StoreOrders {
     private final int LARGE_PEPPERONI = 31;
 
     private final int CALZONE = 40;
-    private final int SPAGHETTI_PIE = 41;
+    private final int LARGE_PEPPERONI = 41;
     private final int BAKED_ZITI = 42;
 
     /*
@@ -42,8 +42,8 @@ public class Exercise01_StoreOrders {
 	 Examples:
 	 createOrder() → [10, 40, 31, 41]
      */
-    public int[] createOrder() {
-        return new int[] {};
+    public int[] createOrder(SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, LARGE_PEPPERONI) {
+        //return new int[] {SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, LARGE_PEPPERONI};
     }
 
     /*
@@ -57,8 +57,14 @@ public class Exercise01_StoreOrders {
     getCalzoneSales([30, 31, 10]) → 0
     getCalzoneSales([]) → 0
      */
-    public int getCalzoneSales(int[] orders) {
-        return 0;
+    public int getCalzoneSales(int[] orders){
+        int calzoneCount = 0;
+
+        for(int i = 0; i < orders.length; i++) {
+            if(orders[i] == CALZONE) {
+                calzoneCount++;
+            }
+        }
     }
 
     /*

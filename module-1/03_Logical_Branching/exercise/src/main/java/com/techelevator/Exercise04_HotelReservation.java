@@ -24,7 +24,19 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3) ➔ 269.97
      */
     public double calculateStayTotal(int numberOfNights) {
-        return 0;
+        double price =0;
+        // number of night = 2
+        if (numberOfNights <= 2) {
+            price = numberOfNights * DAILY_RATE;
+        }
+        if (numberOfNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE) {
+             price = numberOfNights * DISCOUNT_RATE;
+        }
+
+
+
+
+        return price;
     }
 
     /*
@@ -42,6 +54,21 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3, 2) ➔ 289.97
      */
     public double calculateStayTotal(int numOfTotalNights, int numOfWeekendNights) {
+        double price =0;
+        // number of night = 2
+        if (numOfTotalNights <= 2) {
+            price = numOfTotalNights * DAILY_RATE;
+        }
+        if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE) {
+            price = numOfTotalNights * DISCOUNT_RATE;
+        }
+        if (numOfTotalNights >= MINIMUM_NIGHTS_FOR_DISCOUNT_RATE) {
+            price = numOfTotalNights * DISCOUNT_RATE;
+        }
+
+
+
+
         return 0;
     }
 
