@@ -48,8 +48,20 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, true) ➔ 21.375
      */
     public double calculateElectricBill(double unitsUsed, boolean hasRenewableEnergy) {
-        return 0;
-    }
+
+
+        double billTotal = 0;
+        if (unitsUsed <= EXCESS_UNITS_LIMIT) {
+            billTotal = unitsUsed * BASE_RATE;
+        }
+        if (unitsUsed > EXCESS_UNITS_LIMIT) {
+            billTotal = EXCESS_UNITS_LIMIT * BASE_RATE + (unitsUsed - EXCESS_UNITS_LIMIT) * EXCESS_RATE;
+        }
+        if (hasRenewableEnergy) {
+            return billTotal = billTotal * .95;
+        }
+            return billTotal;
+        }
 
     /*
     Customers with renewable energy can put electricity back into the grid. Each customer's net usage (units used - units returned)
@@ -71,7 +83,8 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, 20) ➔ 17.1
     calculateElectricBill(110, 120) ➔ -2.0
      */
-    public double calculateElectricBill(double unitsUsed, double unitsReturned) {
-        return 0;
+        public double calculateElectricBill ( double unitsUsed, double unitsReturned){
+            return 0;
+        }
     }
-}
+
