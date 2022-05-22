@@ -57,7 +57,10 @@ public class Exercise03_Shirts {
                 shirtsOrded[i] = LARGE_TSHIRT;
             }
 
+
+        }
             return shirtsOrded;
+
 
     }
     /*
@@ -73,8 +76,9 @@ public class Exercise03_Shirts {
     placeRequest(['M', 'M', 'L']) → false
     placeRequest([]) → false
      */
-        public boolean[] placeRequest ( char[] order){
-            return new boolean[];
-        }
 
+    public boolean placeRequest(char[] order) {
+        return false;
+    }
+    
 }
