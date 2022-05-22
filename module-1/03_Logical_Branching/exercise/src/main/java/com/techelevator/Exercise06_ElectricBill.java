@@ -84,7 +84,23 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, 120) ➔ -2.0
      */
         public double calculateElectricBill ( double unitsUsed, double unitsReturned){
-            return 0;
+
+
+
+
+            double billTotal = 0;
+            if (unitsUsed <= EXCESS_UNITS_LIMIT) {
+                billTotal = unitsUsed * BASE_RATE;
+            }
+            if (unitsUsed > EXCESS_UNITS_LIMIT) {
+                billTotal = EXCESS_UNITS_LIMIT * BASE_RATE + (unitsUsed - EXCESS_UNITS_LIMIT) * EXCESS_RATE;
+            }
+
+            return billTotal= (.95 - unitsUsed - unitsReturned) * billTotal;
         }
+
+
+
+
     }
 

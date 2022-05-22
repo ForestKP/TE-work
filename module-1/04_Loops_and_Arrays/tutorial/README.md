@@ -28,7 +28,8 @@ for (i = 0; i <= 5; i++) {
 
 Inside the parentheses, there are three things going on:
 
-* `i = 0`: this is the **initializer**. It sets the initial state before the loop runs. Typically, it sets the loop counter—`i` in this case—to the initial value you want to use.
+* `i = 0`: this is the **initializer**. It sets the initial state before the loop runs.
+* Typically, it sets the loop counter—`i` in this case—to the initial value you want to use.
 * `i <= 5`: this is the **condition**. The loop runs as long as this expression evaluates to true.
 * `i++`: this is the **iterator**. After the loop runs, this expression is evaluated. The `++` part means increment `i` by 1 each time.
 

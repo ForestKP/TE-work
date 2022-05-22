@@ -24,7 +24,17 @@ public class Exercise02_BoardingGate {
     generateSeatingChart(2) → [true, true]
      */
     public boolean[] generateSeatingChart(int numberOfSeats) {
-        return new boolean[] {};
+
+        //create new array for number of seats
+        boolean[] checkSeats = new boolean[numberOfSeats];
+        // go through all the seat and check if they are true
+
+        for (int i = 0; i < checkSeats.length; i++) {
+            checkSeats[i] = true;
+
+        }
+        return checkSeats;
+
     }
 
     /*
@@ -41,8 +51,47 @@ public class Exercise02_BoardingGate {
     getAvailableSeatCount([]) → 0
      */
     public int getAvailableSeatCount(boolean[] seatingChart) {
-        return 0;
-    }
+       // make a var to hold the answer
+        // look at the chart (loop) see if the value is false or true(if)
+        // record true value (return)
+        int openSeats =0;
+
+
+        for (int i =0; i < seatingChart.length; i++) {
+            if (seatingChart[i] == true)
+                openSeats++;
+
+        }
+        return openSeats;
+        }
+
+
+
+       /* boolean[] truFalseVal = new boolean[seatingChart];
+
+        for (int i = 0; i < seatingChart.length; i++) {
+            if(i % 1 == 0) {
+                truFalseVal[i] = true;
+            }
+            if(i % 1 == 1) {
+                truFalseVal[i] = false;
+            }
+            return 0;
+        }
+    }*/
+        //boolean[] seatsOpen = new boolean[seatingChart];
+      /*  for (int i = 0; i < seatsOpen.length; i++) {
+
+            if ([i]true) {
+                seatsOpen[i] = true;
+            }
+            for (int i = 0; i < seatingChart.length; i++) {
+                if (seatingChart[i] == false) {
+                }
+            }
+            return 0;
+        }
+   } */
 
     /*
     The crew determined that it would be nice to know how many rows on the plane are at full occupancy.
@@ -56,8 +105,10 @@ public class Exercise02_BoardingGate {
     getNumberOfFullRows([true, true, true, true, true, true]) → 2
     getNumberOfFullRows([false, true, true, false, true, true]) → 0
      */
-    public int getNumberOfFullRows(boolean[] seatingChart) {
-        return 0;
-    }
+        public int getNumberOfFullRows(boolean[] seatingChart) {
+            return 0;
+
+        }
+
 
 }

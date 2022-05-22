@@ -26,7 +26,7 @@ public class Exercise01_StoreOrders {
     private final int LARGE_PEPPERONI = 31;
 
     private final int CALZONE = 40;
-    private final int LARGE_PEPPERONI = 41;
+    private final int SPAGHETTI_PIE = 41;
     private final int BAKED_ZITI = 42;
 
     /*
@@ -42,8 +42,10 @@ public class Exercise01_StoreOrders {
 	 Examples:
 	 createOrder() → [10, 40, 31, 41]
      */
-    public int[] createOrder(SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, LARGE_PEPPERONI) {
-        //return new int[] {SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, LARGE_PEPPERONI};
+    public int[] createOrder() {
+        return new int[]{SMALL_CHEESE, CALZONE, LARGE_PEPPERONI, SPAGHETTI_PIE};
+
+
     }
 
     /*
@@ -57,21 +59,23 @@ public class Exercise01_StoreOrders {
     getCalzoneSales([30, 31, 10]) → 0
     getCalzoneSales([]) → 0
      */
-    public int getCalzoneSales(int[] orders){
+    public int getCalzoneSales(int[] orders) {
         int calzoneCount = 0;
 
-        for(int i = 0; i < orders.length; i++) {
-            if(orders[i] == CALZONE) {
+        for (int i = 0; i < orders.length; i++) {
+            if (orders[i] == CALZONE) {
                 calzoneCount++;
             }
         }
+        return calzoneCount;
     }
+
 
     /*
     Sally also needs to know the total revenue for all cheese pizzas sold on any given day.
-        * Each small cheese pizza costs $8.
-        * Each medium cheese pizza costs $11.
-        * Each large cheese pizza costs $14.
+        *Each small cheese pizza costs $8
+        * Each large cheese pizza costs $11.
+        * Each medium cheese pizza costs $14.
 
     Implement the logic to return the total revenue of all cheese pizzas when given
     an array representing each item that her customers ordered that day.
@@ -81,7 +85,34 @@ public class Exercise01_StoreOrders {
     getCheesePizzaRevenue([10, 11, 20]) → 19
     getCheesePizzaRevenue([11, 21]) → 0
      */
-    public int getCheesePizzaRevenue(int[] orders) {
-        return 0;
-    }
+        public int getCheesePizzaRevenue (int[] orders) {
+            // figure out how many sc then * 8
+            //figure out how many mc then *11
+            // figure out how many lc then * 12
+            // sum of all three of those values and add them to one revenue
+
+            int  totalcheesepizza = 0;
+                    int totalsum1 = 0;
+                    int totalsum2 = 0;
+                    int totalsum3 = 0;
+
+            for (int i = 0; i < orders.length; i++) {
+                if (orders[i] == SMALL_CHEESE) {
+                    totalsum1 = totalsum1 + 8;
+                }
+            }
+
+            for (int i = 0; i < orders.length; i++) {
+                if (orders[i] == MEDIUM_CHEESE) {
+                    totalsum2 = totalsum2 + 11;
+                }
+            }
+
+            for (int i = 0; i < orders.length; i++) {
+                if (orders[i] == LARGE_CHEESE) {
+                    totalsum3 = totalsum3 + 14;
+                }
+            }
+            return totalcheesepizza = totalsum1 + totalsum2 + totalsum3;
+        }
 }
