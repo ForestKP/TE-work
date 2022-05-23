@@ -78,7 +78,26 @@ public class Exercise03_Shirts {
      */
 
     public boolean placeRequest(char[] order) {
+
+
+        for (int i =0; i < order.length; i++)
+            if(order[i] == SMALL_TSHIRT){
+                    return true;
+            }
         return false;
     }
-    
+
 }
+//     int weeklyBurn = dailyHighs[0];
+//
+//        for (int i = 0; i < dailyHighs.length; i++) {
+//
+//            if (dailyHighs[i] > weeklyBurn) {
+//                weeklyBurn = dailyHighs[i];
+//            }
+//
+//
+//        }
+//
+//        return weeklyBurn;
+//    }

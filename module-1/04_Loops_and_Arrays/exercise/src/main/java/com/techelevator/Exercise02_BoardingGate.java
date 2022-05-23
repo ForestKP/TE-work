@@ -66,33 +66,6 @@ public class Exercise02_BoardingGate {
         }
 
 
-
-       /* boolean[] truFalseVal = new boolean[seatingChart];
-
-        for (int i = 0; i < seatingChart.length; i++) {
-            if(i % 1 == 0) {
-                truFalseVal[i] = true;
-            }
-            if(i % 1 == 1) {
-                truFalseVal[i] = false;
-            }
-            return 0;
-        }
-    }*/
-        //boolean[] seatsOpen = new boolean[seatingChart];
-      /*  for (int i = 0; i < seatsOpen.length; i++) {
-
-            if ([i]true) {
-                seatsOpen[i] = true;
-            }
-            for (int i = 0; i < seatingChart.length; i++) {
-                if (seatingChart[i] == false) {
-                }
-            }
-            return 0;
-        }
-   } */
-
     /*
     The crew determined that it would be nice to know how many rows on the plane are at full occupancy.
     Each row has three seats and a row is at full occupancy if all three seats have someone sitting in them.
@@ -106,9 +79,17 @@ public class Exercise02_BoardingGate {
     getNumberOfFullRows([false, true, true, false, true, true]) → 0
      */
         public int getNumberOfFullRows(boolean[] seatingChart) {
-            return 0;
+            int openRow =0;
 
+
+            for (int i =0; i < seatingChart.length; i++) {
+                if (seatingChart[i] == true)
+                    openRow++;
+
+            }
+            return openRow;
         }
+
 
 
 }
