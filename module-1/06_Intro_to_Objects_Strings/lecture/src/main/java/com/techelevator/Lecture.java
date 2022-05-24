@@ -14,7 +14,8 @@ public class Lecture {
 		 * is not the case for most classes */
 
 		/* create an new instance of String using a literal */
-
+		String greeting = "Hello , world";
+		System.out.println("greeting" + greeting);
 		
 		System.out.println();
 		System.out.println("******************************");
@@ -22,7 +23,10 @@ public class Lecture {
 		System.out.println("******************************");
 		System.out.println();
 
+			System.out.println ("charAt(0)" + greeting );
+			System.out.println("does our string contain \"Hello\" ? " + greeting.contains("Hello "));
 
+			System.out.println(greeting.indexOf("world"));
 		/* Other commonly used methods:
 		 *
 		 * endsWith

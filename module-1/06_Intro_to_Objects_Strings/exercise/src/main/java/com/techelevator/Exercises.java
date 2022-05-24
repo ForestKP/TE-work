@@ -9,7 +9,7 @@ public class Exercises {
 	 helloName("X") → "Hello X!"
 	 */
 	public String helloName(String name) {
-		return null;
+		return "Hello " + name + "!";
 	}
 
 	/*
@@ -20,7 +20,7 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return null;
+		return a + b + b +a;
 	}
 
 	/*
@@ -32,7 +32,7 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
+		return "<"+ tag + ">" + word + "</" + tag + ">";
 	}
 
 	/*
@@ -44,7 +44,7 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+		return out.substring(0,2) + word + out.substring(2);
 	}
 
 	/*
@@ -55,7 +55,14 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		return null;
+		String repeatLast2Chars = "";
+		String last2Chars = str.substring(str.length() - 2);
+
+		for (int i = 0; i < 3; i++) {
+			repeatLast2Chars += last2Chars;
+		}
+
+		return repeatLast2Chars;
 	}
 
 	/*
@@ -176,7 +183,7 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
-		return false;
+		return str.endsWith("ly");
 	}
 
 	/*
@@ -326,7 +333,10 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+
+		String strMinusYaks = str.replaceAll("y.k", "");
+
+		return strMinusYaks;
 	}
 
 }
