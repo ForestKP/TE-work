@@ -17,10 +17,10 @@ public class LinearConvert {
 	String strUnitOfMeasurement = input.nextLine();
 
 			if(strUnitOfMeasurement.equals("m")){
-				System.out.println(length + "m is " + (length + 3.2808399) + "f");
+				System.out.println(length + "m is " + (length * 3.2808399) + "f");
 			}
 			else if (strUnitOfMeasurement.equals("f")){
-				System.out.println(length + "f is " + (length + 0.3048) + "m");
+				System.out.println(length + "f is " + (length * 0.3048) + "m");
 			}
 			else if(!strUnitOfMeasurement.equals("f") && !strUnitOfMeasurement.equals("m")) {
 			System.out.println("ERROR: 404: invalid unit of measurement. Please use meter or feet.");
