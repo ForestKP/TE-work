@@ -74,7 +74,11 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-		return null;
+		if (str.length() < 2) {
+			return str;
+		}
+
+		return str.substring(0, 2);
 	}
 
 	/*
@@ -84,8 +88,11 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+		int middle = str.length() / 2;
+
+		return str.substring(0, middle);
 	}
+
 
 	/*
 	 Given a string, return a version without the first and last char, so "Hello" yields "ell".
@@ -95,7 +102,10 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+		String strMinusFirstChar = str.substring(1);
+		String strMinusFirstLastChar = strMinusFirstChar.substring(0, strMinusFirstChar.length() - 1);
+
+		return strMinusFirstLastChar;
 	}
 
 	/*
@@ -107,7 +117,11 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
+		if (a.length() > b.length()) {
+			return b + a + b;
+		} else {
+			return a + b + a;
+		}
 	}
 
 	/*
@@ -118,7 +132,10 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+		String aMinusFirstChar = a.substring(1);
+		String bMinusFirstChar = b.substring(1);
+
+		return aMinusFirstChar + bMinusFirstChar;
 	}
 
 	/*
@@ -129,7 +146,14 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return null;
+		if (str.length() < 3) {
+			return str;
+		}
+
+		String first2Chars = str.substring(0, 2);
+		String restOfStr = str.substring(2);
+
+		return restOfStr + first2Chars;
 	}
 
 	/*
@@ -140,7 +164,14 @@ public class Exercises {
 	 right2("Hi") → "Hi"
 	 */
 	public String right2(String str) {
-		return null;
+		if (str.length() < 3) {
+			return str;
+		}
+// last 2 chars
+		String charsBeforeLast2 = str.substring(0, str.length() - 2);
+		String last2Chars = str.substring(str.length() - 2);
+
+		return last2Chars + charsBeforeLast2;
 	}
 
 	/*
@@ -151,8 +182,13 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
+		if (front) {
+			return str.substring(0, 1);
+		}
+
+		return str.substring(str.length() - 1);
 	}
+
 
 	/*
 	 Given a string, return a version without both the first and last char of the string. The string
@@ -162,7 +198,14 @@ public class Exercises {
 	 withoutEnd2("ab") → ""
 	 */
 	public String withoutEnd2(String str) {
-		return null;
+		if (str.length() < 3) {
+			return "";
+		}
+
+		String strMinusFirstChar = str.substring(1);
+		String strMinusFirstAndLastChar = strMinusFirstChar.substring(0, strMinusFirstChar.length() - 1);
+
+		return strMinusFirstAndLastChar;
 	}
 
 	/*
@@ -173,7 +216,18 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		int middle = str.length() / 2;
+		String middleSubstring = "";
+
+		if (str.length() <= 2) {
+			return str;
+		}
+
+		if (str.length() % 2 == 0) {
+			middleSubstring = str.substring(middle - 1, middle + 1);
+		}
+
+		return middleSubstring;
 	}
 
 	/*
@@ -194,7 +248,10 @@ public class Exercises {
 	 nTwice("Chocolate", 1) → "Ce"
 	 */
 	public String nTwice(String str, int n) {
-		return null;
+		String firstChars = str.substring(0, n);
+		String lastChars = str.substring(str.length() - n);
+
+		return firstChars + lastChars;
 	}
 
 	/*
@@ -206,7 +263,21 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		return null;
+
+
+
+
+		if (str.length() < 3) {
+			return str;
+
+
+
+
+		} else if (index > str.length() - 2 || index < 0) {
+			return str.substring(0, 2);
+		}
+
+		return str.substring(index, index + 2);
 	}
 
 	/*
@@ -217,7 +288,18 @@ public class Exercises {
 	 middleThree("solving") → "lvi"
 	 */
 	public String middleThree(String str) {
-		return null;
+		int middle = str.length() / 2;
+		String middleSubstring = "";
+
+		if (str.length() <= 3) {
+			return str;
+		}
+
+		if (str.length() % 2 != 0) {
+			middleSubstring = str.substring(middle - 1, middle + 2);
+		}
+
+		return middleSubstring;
 	}
 
 	/*
@@ -229,6 +311,12 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
+		boolean badIsIndex0Or1 = str.indexOf("bad") == 0 || str.indexOf("bad") == 1;
+
+		if (badIsIndex0Or1) {
+			return true;
+		}
+
 		return false;
 	}
 
@@ -239,7 +327,13 @@ public class Exercises {
 	 stringTimes("Hi", 1) → "Hi"
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+		String strRepeated = "";
+
+		for (int i = 0; i < n; i++) {
+			strRepeated += str;
+		}
+
+		return strRepeated;
 	}
 
 	/*
@@ -260,7 +354,16 @@ public class Exercises {
 	 countXX("xxxx") →
 	 */
 	public int countXX(String str) {
-		return 0;
+		int counter = 0;
+
+		for (int i = 1; i < str.length(); i++) {
+			//if the character & the character to it's left equal x
+			if ((str.charAt(i)) == 'x' && (str.charAt(i - 1) == 'x')) {
+				counter++;
+			}
+		}
+
+		return counter;
 	}
 
 	/*
@@ -280,7 +383,13 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
+		String strBitsEOther = "";
+
+		for (int i = 0; i < str.length(); i += 2) {
+			strBitsEOther += str.substring(i, i + 1);
+		}
+
+		return strBitsEOther;
 	}
 
 	/*
@@ -290,8 +399,15 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		return null;
-	}
+
+			String splosionString = "";
+
+			for (int i = 0; i < str.length(); i++) {
+				splosionString += str.substring(0, i + 1);
+			}
+
+			return splosionString;
+		}
 
 	/*
 	 Given a string, return the count of the number of times that a substring length 2 appears in the string and
@@ -301,9 +417,21 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
-	}
+		if (str.length() < 3) {
+			return 0;
+		}
 
+		String last2Chars = str.substring(str.length() - 2);
+		int counter = 0;
+
+		for (int i = 0; i < str.length() - 2; i++) {
+			if (str.substring(i, i + 2).equals(last2Chars)) {
+				counter++;
+			}
+		}
+
+		return counter;
+	}
 	/*
 	 Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end
 	 should not be removed.
@@ -322,7 +450,22 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		if (str.length() < 3) {
+			return str;
+		}
+
+		String altPairsString = "";
+
+		for (int i = 0; i < str.length(); i += 4) {
+			// check if str has only one char left
+			if (str.length() > i + 2) {
+				altPairsString += str.substring(i, i + 2);
+			} else {
+				altPairsString += str.substring(i);
+			}
+		}
+
+		return altPairsString;
 	}
 
 	/*

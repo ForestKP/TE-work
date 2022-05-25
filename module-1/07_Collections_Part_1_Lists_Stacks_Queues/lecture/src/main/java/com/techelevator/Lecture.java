@@ -11,11 +11,16 @@ public class Lecture {
 		System.out.println("       LISTS");
 		System.out.println("####################");
 
+		List<String> lotrName = new ArrayList<ArrayList>();
+
+		lotrNames.add("gal"0);
+		lotrName.add("Smeagol")
 
 		System.out.println("####################");
 		System.out.println("Lists are ordered");
 		System.out.println("####################");
-
+		for  (int i=0; i < lotrName.size(); i++;)
+			Sytem.out.println(lotrName)
 
 		System.out.println("####################");
 		System.out.println("Lists allow duplicates");
@@ -56,6 +61,7 @@ public class Lecture {
 		System.out.println("Lists can be reversed too");
 		System.out.println("####################");
 
+		collection.sort
 
 		System.out.println("####################");
 		System.out.println("       FOREACH");
