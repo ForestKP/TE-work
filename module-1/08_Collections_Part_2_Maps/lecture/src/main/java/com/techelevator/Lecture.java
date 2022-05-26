@@ -13,6 +13,10 @@ public class Lecture {
 		System.out.println("####################");
 		System.out.println();
 
+		Map<String, String> nameToZip = new HashMap<String, String>();
+
+		nameToZip.put("Beth Tool", "15237");
+
 
 	}
 

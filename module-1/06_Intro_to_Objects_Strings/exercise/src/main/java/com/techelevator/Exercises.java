@@ -20,7 +20,7 @@ public class Exercises {
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
 	public String makeAbba(String a, String b) {
-		return a + b + b +a;
+		return a + b + b + a;
 	}
 
 	/*
@@ -32,7 +32,7 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return "<"+ tag + ">" + word + "</" + tag + ">";
+		return "<" + tag + ">" + word + "</" + tag + ">";
 	}
 
 	/*
@@ -44,7 +44,7 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return out.substring(0,2) + word + out.substring(2);
+		return out.substring(0, 2) + word + out.substring(2);
 	}
 
 	/*
@@ -265,12 +265,8 @@ public class Exercises {
 	public String twoChar(String str, int index) {
 
 
-
-
 		if (str.length() < 3) {
 			return str;
-
-
 
 
 		} else if (index > str.length() - 2 || index < 0) {
@@ -400,14 +396,14 @@ public class Exercises {
 	 */
 	public String stringSplosion(String str) {
 
-			String splosionString = "";
+		String splosionString = "";
 
-			for (int i = 0; i < str.length(); i++) {
-				splosionString += str.substring(0, i + 1);
-			}
-
-			return splosionString;
+		for (int i = 0; i < str.length(); i++) {
+			splosionString += str.substring(0, i + 1);
 		}
+
+		return splosionString;
+	}
 
 	/*
 	 Given a string, return the count of the number of times that a substring length 2 appears in the string and
@@ -432,6 +428,7 @@ public class Exercises {
 
 		return counter;
 	}
+
 	/*
 	 Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end
 	 should not be removed.
@@ -477,9 +474,13 @@ public class Exercises {
 	 */
 	public String stringYak(String str) {
 
-		String strMinusYaks = str.replaceAll("y.k", "");
+		int strMinusYaks = str.indexOf("yak");
 
-		return strMinusYaks;
+		while (strMinusYaks != -1) {
+
+			str = str.substring(0, strMinusYaks) + str.substring(strMinusYaks + 3);
+			strMinusYaks = str.indexOf("yak");
+		}
+		return str;
 	}
-
 }

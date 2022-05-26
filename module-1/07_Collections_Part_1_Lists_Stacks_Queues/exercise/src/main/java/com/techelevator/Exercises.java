@@ -16,7 +16,15 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+
+		List<String> results = new ArrayList<String>();
+
+		for(int i = 0; i < stringArray.length; i++) {
+			results.add(stringArray[i]);
+
+		}
+
+		return results;
 	}
 
 	/*
@@ -26,7 +34,13 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] strinResults = new String[stringList.size()];
+
+		for (int i = 0; i < stringList.size(); i++) {
+			strinResults[i] = stringList.get(i);
+		}
+
+		return strinResults;
 	}
 
 	/*
@@ -37,7 +51,21 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		List<String> noWords = new ArrayList<String>();
+
+
+		for (int i = 0; i < stringArray.length; i++) {
+			String word = stringArray[i];
+
+
+
+
+			if (word.length() != 4) {
+				noWords.add(word);
+			}
+
+		}
+		return noWords;
 	}
 
 	/*
@@ -47,7 +75,23 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> divideByToo = new ArrayList<Double>();
+
+		for (int i = 0; i < intArray.length; i++) {
+
+
+
+
+			double numToDivide = intArray[i];
+			double divided = numToDivide / 2;
+			divideByToo.add(divided);
+
+
+
+		}
+		System.out.println(divideByToo);
+		return divideByToo;
+
 	}
 
 	/*
@@ -78,9 +122,28 @@ public class Exercises {
 	 foundIntTwice( [9, 9, 44, 2, 88, 9], 9) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
+		int counter = 0;
+
+		for (Integer num : integerList) {
+			if (num.equals(intToFind)) {
+				counter++;
+			}
+		}
+
+		if (counter > 1) {
+			return true;
+		}
+
 		return false;
 	}
-
+//	int counter = 0;
+//		for (int i = 0; i < integerList.size(); i++) {
+//			if ( == integerList.get(i)) {
+//			counter++;
+//			}
+//		}
+//		return (counter > 2);
+//	}
 	/*
 	 Given an array of Integers, return a List that contains the same Integers (as Strings). Except any multiple of 3
 	must be replaced by the String "Fizz", any multiple of 5 must be replaced by the String "Buzz",
@@ -94,7 +157,21 @@ public class Exercises {
 	HINT: To convert an Integer x to a String, you can use x.toString() in your code. For example, if x = 1, then x.toString() returns "1."
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		List<String> fizzAnswer = new ArrayList<String>();
+
+		for (Integer v : integerArray) {
+			if ((v % 3 == 0) && (v % 5 == 0)) {
+				fizzAnswer.add("FizzBuzz");
+			} else if (v % 3 == 0) {
+				fizzAnswer.add("Fizz");
+			} else if (v % 5 == 0) {
+				fizzAnswer.add("Buzz");
+			} else {
+				fizzAnswer.add(v.toString());
+			}
+		}
+
+		return fizzAnswer;
 	}
 
 	/*
