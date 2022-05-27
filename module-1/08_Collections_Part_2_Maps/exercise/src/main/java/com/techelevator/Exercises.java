@@ -58,7 +58,7 @@ public class Exercises {
 
 
 		if(!(animalGroups.containsKey(animalName.toLowerCase()))){
-			return "null";
+			return "unknown";
 
 		}
 		return animalGroups.get(animalName.toLowerCase());
@@ -88,17 +88,21 @@ public class Exercises {
 	 */
 	public Double isItOnSale(String itemNumber) {
 		Map<String, Double>discount = new HashMap<String, Double>();
+
 		discount.put("kitchen4001", 0.20);
 		discount.put("garage1070", 0.15);
 		discount.put("livingroom", 0.10);
 		discount.put("kitchen6073", 0.40);
 		discount.put("bedroom3434", 0.60);
 		discount.put("bath0073", 0.15);
+
 		if(!(discount.containsKey(itemNumber.toLowerCase()))) {
 			return 0.00;
-		} 	return discount.get(itemNumber.toLowerCase());
-	}
+		}
 
+		return discount.get(itemNumber.toLowerCase());
+
+	}
 
 	/*
 	 * Modify and return the given map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
@@ -115,24 +119,12 @@ public class Exercises {
 		Set<String>keys = peterPaul.keySet(); //create a set to loop
 
 		for(String money: keys) {
-
 			if((peterPaul.get("Peter") > 0) && (peterPaul.get("Paul") < 1000)){
-
-
 				if(peterPaul.get("Peter") % 2 == 1) {
-
-
-					peterPaul.put("Paul", (peterPaul.get("Paul") + peterPaul.get("Peter") / 2) );
-					peterPaul.put("Peter", (peterPaul.get("Peter") / 2) + 1);
-
-
-
-
+					peterPaul.put("Paul", (peterPaul.get("Paul") + peterPaul.get("Peter") / 2) ); //takes 1/2 peter's money and gives it to paul and fixes rounding issue
+					peterPaul.put("Peter", (peterPaul.get("Peter") / 2) + 1); // sets peter's new halved value and fixes rounding issue by adding 1
 				} else {
-
-
-
-					peterPaul.put("Paul", (peterPaul.get("Paul") + peterPaul.get("Peter") / 2));
+					peterPaul.put("Paul", (peterPaul.get("Paul") + peterPaul.get("Peter") / 2)); //takes 1/2 peter's money and gives it to paul
 					peterPaul.put("Peter", (peterPaul.get("Peter") / 2) );
 				}
 			}
@@ -164,7 +156,7 @@ public class Exercises {
 
 			petersContribution = petersMoney / 4;							//determines 1/4 of his total money
 			petersMoney = petersMoney - petersContribution;					//subtracts contribution from their total money
-
+			//System.out.println("peters contribution is " +petersContribution);
 			paulsContribution = paulsMoney / 4;
 			paulsMoney = paulsMoney - paulsContribution;
 
@@ -219,10 +211,10 @@ public class Exercises {
 	public Map<String, Integer> wordCount(String[] words) {
 		Map<String, Integer>wordCount = new HashMap<String, Integer>();
 
-		for(int i = 0; i < words.length; i++) {  				// loops through array
+		for(int i = 0; i < words.length; i++) {
 			String key = words[i];								// saves string from array[i] into key
 			int counter = 0;									// initialize counter
-			for(int j = 0; j < words.length; j++) {				// loop grabs words[i] and compares it to rest of array
+			for(int j = 0; j < words.length; j++) {
 				if(words[i].contentEquals(words[j])) {
 					counter++;									// if .equals then we add 1 to the counter
 				}
@@ -253,13 +245,13 @@ public class Exercises {
 
 		for(int i = 0; i < ints.length; i++) {  				// loop through the array of ints
 			Integer key = ints[i];								// save or key value as the int
-			int counter = 0;									// initialize our counter
-			for(int j = 0; j < ints.length; j++) {				// loop to compare our key value against the rest of the array
+			int counter = 0;
+			for(int j = 0; j < ints.length; j++) {
 				if(ints[i] == ints[j]) {
-					counter++;									//if match is found we incriment counter
+					counter++;
 				}
 			}
-			integerCount.put(key, counter);						//set int[i] to key and counter to value
+			integerCount.put(key, counter);
 
 
 		}
@@ -313,6 +305,12 @@ public class Exercises {
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
 		Map<String, Integer>consolidateInventory = new HashMap<String, Integer>();
 
+		// take 1 key from map1 and match it against all keys in map 2
+		// if the key.equal then add the values and return them as a key/value in newMap
+		// if the key is not equal then return the key and its original value in newMap
+		// I will need two loops (mainWarehouse and remoteWarehouse)
+		// must set up variables for key and value
+		// create set?
 		Set<String>keysMain = mainWarehouse.keySet();
 		Set<String>keysRemote = remoteWarehouse.keySet();
 
@@ -323,24 +321,16 @@ public class Exercises {
 
 			for(String remote: keysRemote) {
 				if(main.contentEquals(remote)) {
-					value = remoteWarehouse.get(remote);
+					value = mainWarehouse.get(main) + remoteWarehouse.get(remote);
 				}else {
 					if(!remote.contentEquals(main)) {
-						consolidateInventory.put(, remoteWarehouse.get(remote));
+						consolidateInventory.put(remote, remoteWarehouse.get(remote));
 					}
 				}
 			}
 			consolidateInventory.put(main, value);
 		}
 
-		//for( String :) //must be string we are looping keys which are set as string
-
-		//if(mainWarehouse(i).equals(remoteWarehouse(j))) {
-		// add the values
-		//put the key and the value into newMap
-
-
-		//System.out.println(consolidateInventory);
 		return consolidateInventory;
 	}
 
@@ -368,7 +358,7 @@ public class Exercises {
 
 
 		for (int i = 0; i < words.length; i++) {
-			int counter = 0;                               //must be within the for loop to reset
+			int counter = 0;
 
 			if(words[i].length() < 2) {						//if less than 2 then impossible return 0
 				last2Revisited.put(words[i],0);
@@ -384,7 +374,7 @@ public class Exercises {
 			last2Revisited.put(words[i], counter);						    // add to map before restarting loop
 		}
 
-		//System.out.println(last2Revisited);
+		//System.out.println(last2Revisited);                               //output check
 		return last2Revisited;
 	}
 
