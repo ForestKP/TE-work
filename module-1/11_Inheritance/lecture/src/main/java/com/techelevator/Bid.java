@@ -2,6 +2,8 @@ package com.techelevator;
 
 public class Bid {
 
+// constructor
+
 	private String bidder;
 	private int bidAmount;
 
