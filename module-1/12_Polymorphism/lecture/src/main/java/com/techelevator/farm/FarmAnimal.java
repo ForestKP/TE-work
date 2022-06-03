@@ -1,5 +1,8 @@
 package com.techelevator.farm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FarmAnimal {
 	private String name;
 	private String sound;
@@ -17,4 +20,10 @@ public class FarmAnimal {
 		return sound;
 	}
 
+
+
+	Cow steveCow = new Cow();
+	Chicken steveChicken = new Chicken();
+
+	List<farmAnimalList> = new ArrayList<FarmAnimal>
 }
