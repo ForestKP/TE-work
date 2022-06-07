@@ -16,20 +16,16 @@ public class SavingsAccount extends BankAccount {
 
     public int withdraw(int amountToWithdraw) {
 
-
-        if (amountToWithdraw > getBalance()) { // if you don't have enough money return the account balance
-            return getBalance();
-        }
-
-            if (getBalance() - amountToWithdraw < 150) { // and you have less than 150$
-                super.withdraw(amountToWithdraw + 2); // withdraw the amount given + 2$
-                return getBalance(); // return the balance
-            }
-
-         if (getBalance() >= amountToWithdraw) { // if you do have enough money
+        if (getBalance() - amountToWithdraw >= 150) { // and you have 150$
+            return super.withdraw(amountToWithdraw);
 
         }
-        return super.withdraw(amountToWithdraw);
+
+        if (getBalance() >= amountToWithdraw + 2) { // if you do have enough money
+             return super.withdraw(amountToWithdraw + 2);
+        }
+
+        return getBalance();
     }
 
 }
