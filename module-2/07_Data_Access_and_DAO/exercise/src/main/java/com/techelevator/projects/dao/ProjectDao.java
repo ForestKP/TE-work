@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ProjectDao {
 
-	/**
+    Project getProject(Long projectId);
+
+    /**
 	 * Get a project from the datastore that has the given id.
 	 * If the id is not found, return null.
 	 *
@@ -39,4 +41,5 @@ public interface ProjectDao {
 	public void deleteProject(int projectId);
 
 
+	void deleteProject(Long projectId);
 }

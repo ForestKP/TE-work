@@ -49,6 +49,12 @@ public interface EmployeeDao {
 	 */
 	public void removeEmployeeFromProject(int projectId, int employeeId);
 
+    List<Employee> getEmployeesByProjectId(Long projectId);
+
+	void addEmployeeToProject(Long projectId, Long employeeId);
+
+	void removeEmployeeFromProject(Long projectId, Long employeeId);
+
 	/**
 	 * Get all of the employees that aren't assigned to any project.
 	 *
