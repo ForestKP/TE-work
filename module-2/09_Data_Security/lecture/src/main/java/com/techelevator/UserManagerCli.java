@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 import javax.sql.DataSource;
 
-import com.techelevator.dao.JdbcUserDao;
+import com.techelevator.model.dao.JdbcUserDao;
 import com.techelevator.model.User;
-import com.techelevator.dao.UserDao;
+import com.techelevator.model.dao.UserDao;
 import com.techelevator.security.PasswordHasher;
 
 import org.apache.commons.dbcp2.BasicDataSource;
