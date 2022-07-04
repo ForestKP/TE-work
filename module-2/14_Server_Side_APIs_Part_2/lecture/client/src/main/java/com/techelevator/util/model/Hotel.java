@@ -1,4 +1,4 @@
-package com.techelevator.hotels.model;
+package com.techelevator.util.model;
 
 public class Hotel {
 

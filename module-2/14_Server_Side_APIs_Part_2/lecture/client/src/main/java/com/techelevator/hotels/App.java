@@ -1,7 +1,7 @@
 package com.techelevator.hotels;
 
-import com.techelevator.hotels.model.Hotel;
-import com.techelevator.hotels.model.Reservation;
+import com.techelevator.util.model.Hotel;
+import com.techelevator.util.model.Reservation;
 import com.techelevator.hotels.services.ConsoleService;
 import com.techelevator.hotels.services.HotelService;
 

@@ -1,4 +1,4 @@
-package com.techelevator.hotels.model;
+package com.techelevator.util.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
