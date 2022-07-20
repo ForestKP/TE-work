@@ -12,7 +12,17 @@
 			return x + y;
         }
 */
-
+function sumDouble(x, y) 
+		{
+			if (x == y) 
+			{
+				return (x + y) * 2;
+			}
+			else 
+			{
+				return x + y;
+			}
+        }
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
     Given 3 int values, return true if 1 or more of them are teen.
@@ -21,7 +31,17 @@
 		hasTeen(20, 19, 10) → true
 		hasTeen(20, 10, 13) → true
 */
-
+function hasTeen(a, b, c) 
+		{
+			if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19)) 
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			} 
+		}
 /* 
 3. **lastDigit** Given two non-negative int values, return true if they have the same 
     last digit, such as with 27 and 57.
@@ -30,7 +50,20 @@
 		lastDigit(6, 17) → false
 		lastDigit(3, 113) → true
 */
+function lastDigit(a, b) 
+		{
+			let lastDigitA = a.toString().split('').pop();
+			let lastDigitB = b.toString().split('').pop();
 
+			if (lastDigitA == lastDigitB ) 
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 /*
 4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 
     string, otherwise return the empty string.
@@ -39,6 +72,21 @@
 		seeColor("xxred") → ""
         seeColor("blueTimes") → "blue"
 */
+function seeColor(colorString) 
+		{
+			if (colorString.indexOf('red') == 0) 
+			{
+				return "red";
+			}
+			else if (colorString.indexOf('blue') == 0) 
+			{
+				return "blue";
+			}
+			else 
+			{
+				return "";
+			}
+		}
 
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, removes
@@ -47,6 +95,20 @@
 		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
+function oddOnly(startingArray) 
+		{
+			let oddArray = [];
+
+			for (let i = 0; i < startingArray.length; i++) 
+			{
+				if (startingArray[i] % 2 == 1) 
+				{
+					oddArray.push(startingArray[i]);
+				}
+			}
+
+			return oddArray;
+		}
 
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
@@ -68,7 +130,17 @@ or false otherwise.
 		cigarParty(50, false) → true
 		cigarParty(70, true) → true
 */
-
+function cigarParty(cigars, weekend) 
+		{
+			if ((cigars > 39 && cigars < 61 && weekend == false) || (cigars > 39 && weekend == true)) 
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
 /*
 8. **fizzBuzz** Given a number, return a value according to the following rules:
 If the number is multiple of 3, return "Fizz."
@@ -82,7 +154,25 @@ In all other cases return the original number.
 	fizzBuzz(15) → "FizzBuzz"
 	fizzBuzz(8) → 8
 */
-
+function fizzBuzz(a) 
+		{
+			if (a % 15 == 0) 
+			{
+			return "FizzBuzz";
+			} 
+			else if (a % 5 == 0)
+			{
+				return "Buzz";
+			} 
+			else if (a % 3 == 0)
+			{
+				return "Fizz";
+			} 
+			else 
+			{
+				return a;
+			}
+		}
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
 
@@ -107,6 +197,21 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+function filterMultiplesOfX(startingArray) 
+		{
+			let x = 0;
+			let y = 3;
+			let z = 5;
+
+			const multiplesXArray = startingArray.filter((number) => { return number % x;});
+			return multiplesXArray;
+
+			const multiplesYArray = startingArray.filter((number) => { return number % y;});
+			return multiplesYArray;
+
+			const multiplesZArray = startingArray.filter((number) => { return number % z;});
+			return multiplesZArray;
+		}
 
 /*
 12. **createObject** Write a function that creates an object with a property called 
