@@ -1,4 +1,4 @@
-/*
+ /*
     Example of a multi-line comment just like in C#/Java
 */
 
@@ -29,7 +29,7 @@ function variables() {
   ];
   console.table(weekdays);
 }
-
+ 
 /**
  * Functions can also accept parameters.
  * Notice the parameters do not have types.

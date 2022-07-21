@@ -19,6 +19,22 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
+ function isAdmitted(gpa = 0, satScore, recommendation) 
+    {
+        let highGPA = gpa > 4.0;
+        let highSATScore = satScore > 1300;
+        let gpaHasRec = gpa > 3.0 && recommendation == true;
+        let satHasRec = satScore > 1200 && recommendation == true;
+
+        if (highGPA || highSATScore || gpaHasRec || satHasRec) 
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
 
 /**
  * Write a function called useParameterToFilterArray that takes an anonymous
@@ -55,7 +71,10 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
-
+function makeHappy(words) 
+{
+    return words.map(word => 'Happy ' + word);
+}
 /*
  * Write and document a function called getFullAddressesOfProperties
  * that takes an array of JavaScript objects containing the
@@ -73,7 +92,13 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Use `map` and an anonymous function.
  */
-
+function getFullAddressesOfProperties(addresses)
+{
+    return addresses.map((address) => 
+        {
+            return `${address.streetNumber} ${address.streetName} ${address.streetType} ${address.city} ${address.state} ${address.zip}`;
+        });
+}
 /** 
  * Write and document a function called findLargest that uses `forEach`
  * to find the largest element in an array.
@@ -88,7 +113,20 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {number[]|string[]} searchArray the array to search
  * @returns {number|string} the number or string that is largest
  **/
+ function findLargest(numbers) 
+        {
+            let largestNumber = ''; 
 
+            numbers.forEach((currentNumber) => 
+            {
+                if (currentNumber > largestNumber) 
+                {
+                    largestNumber = currentNumber;
+                }
+            });
+
+            return largestNumber;
+        }
 
 /*
  * CHALLENGE
