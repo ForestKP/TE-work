@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 export default {
     name: "new-book-form",
     data() {
@@ -28,7 +29,7 @@ export default {
                 author: '',
                 read: false,
                 isbn: ''
-            };
+            }; this.$router.push({name: 'my-books'});
         }
     }
 }
