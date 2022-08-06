@@ -11,9 +11,7 @@
 </template>
 
 <script>
-// Update the `TopicDetails` component to use that 
-// new method to update its data.
-import topicsService from '@/services/TopicsServices';
+import topicService from '@/services/TopicService'
 export default {
   name: 'topic-details',
   props: {
@@ -28,12 +26,10 @@ export default {
       },
     }
   },
-  // Update the `TopicDetails` component 
-  // to use that new method to update its data.
   created() {
-    topicsService.getMessages(this.$route.params.id).then(response => {
-      this.topic = response.data;
-    })
+    topicService.getDetails(this.$route.params.id).then((topicFromResponse) => {
+      this.topic = topicFromResponse.data;
+    });
   }
 }
 </script>
